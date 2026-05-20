@@ -12,6 +12,10 @@
   A modern furniture and appliance rental website built using HTML, CSS, JavaScript, and Firebase.
 </p>
 
+## Link 🔗
+
+https://kamalesh1214.github.io/Rent_Ease/
+
 ## About The Project
 
 RentEase is a responsive rental platform designed for students and working professionals who want affordable furniture and appliances without the hassle of ownership.
