@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>
+            Rent Ease
+        </title>
+        <link rel="icon" href="Images/logo_back.png">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div class="intro-screen" id="introScreen">
+            <div class="intro-bg"></div>
+            <div class="intro-panel panel-top"></div>
+            <div class="intro-panel panel-left"></div>
+            <div class="intro-panel panel-right"></div>
+            <div class="intro-panel panel-bottom"></div>
+            <span class="intro-logo">
+                <div class="intro-line"></div>
+                <h1>Rent Ease</h1>
+                <div class="intro-line"></div>
+            </span>
+        </div>
+
+        <nav>
+            <div class="nav-logo">
+                <a href="index.html"><img src="Images/logo.png" alt="LOGO"></a>
+                <a href="index.html">Rent <span>Ease</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="#products">Produts</a>
+                <a href="#plans">Plans</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-change" id="themeChange">🌙</button>
+                <a href="#" class="nav-login" onclick="openModal('login')">Log In</a>
+                <a href="#" class="nav-cta" onclick="openModal('signup')">Get Started</a>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">Now available in 12+ cities</div>
+                <h1>
+                    Premium living,<br>
+                    without the <em>ownership</em><br> 
+                    burden.
+                </h1>
+                <p>
+                    Rent high-quality furniture and appliances with flexible monthly plans. 
+                    Designed for students, professionals, and modern city living.
+                </p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn-primary">Browse Products</a>
+                    <a href="#plans" class="btn-outline">View Plans</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">10K+</span>
+                        <span class="stat-label">Active renters</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">500+</span>
+                        <span class="stat-label">Products listed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">12</span>
+                        <span class="stat-label">Cities served</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="float-chip top">
+                    <div class="chip-dot green">✓</div>
+                    <span>Free delivery &amp; setup</span>
+                </div>
+                <div class="hero-main-card">
+                    <div class="card-img-area">
+                        <img src="Images/premium-sofa.jpeg" alt="premium sofa">
+                        <span class="card-tag">Furniture</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Premium 3-Seater Sofa</h3>
+                        <p>Velvet finish · Includes delivery &amp; setup</p>
+                        <div class="card-price-row">
+                            <div class="card-price">
+                                <strong>₹899</strong>
+                                <small>/month</small>
+                            </div>
+                            <button class="card-rent-btn" onclick="addToCart('Premium 3-Seater Sofa')">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-chip left">
+                    <div class="chip-dot orange">↩</div>
+                    <span>Easy returns anytime</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section-alt" id="how">
+            <div class="section-header center">
+            <span class="section-label">How It Works</span>
+            <h2 class="section-title">From browse to doorstep<br>in 4 simple steps</h2>
+            </div>
+            <div class="steps-row">
+            <div class="step-box">
+                <div class="step-num">01</div>
+                <div class="step-icon">🔍</div>
+                <h3>Browse & Choose</h3>
+                <p>Explore our curated catalog of furniture and appliances by category.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num">02</div>
+                <div class="step-icon">📋</div>
+                <h3>Select a Plan</h3>
+                <p>Pick a rental tenure — 3, 6, or 12 months — that suits your stay.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num">03</div>
+                <div class="step-icon">🚚</div>
+                <h3>Schedule Delivery</h3>
+                <p>Choose your delivery date and address. We install everything for you.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num">04</div>
+                <div class="step-icon">🔄</div>
+                <h3>Extend or Return</h3>
+                <p>At the end of your tenure, extend, swap, or schedule a free pickup.</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="products">
+            <div class="section-header">
+                <span class="section-label">Product Catalog</span>
+                <h2 class="section-title">Everything for your home,<br>ready to rent today</h2>
+            </div>
+            <div class="filter-tabs">
+                <button class="ftab active" onclick="filterProducts('all', this)">All Items</button>
+                <button class="ftab" onclick="filterProducts('furniture', this)">🛋 Furniture</button>
+                <button class="ftab" onclick="filterProducts('appliances', this)">🏠 Appliances</button>
+                <button class="ftab" onclick="filterProducts('bedroom', this)">🛏 Bedroom</button>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+
+        <!-- PLANS -->
+        <section class="section-alt" id="plans">
+            <div class="section-header center">
+                <span class="section-label">Rental Plans</span>
+                <h2 class="section-title">Flexible plans for every stay</h2>
+                <p class="section-sub">No hidden fees. Cancel or extend anytime with 15-day notice.</p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-sub">Great for short stays</div>
+                    <div class="plan-price">₹999</div>
+                    <div class="plan-period">per month · 3-month plan</div>
+                    <hr class="plan-divider">
+                    <div class="plan-feature">Free delivery &amp; setup</div>
+                    <div class="plan-feature">1 major item included</div>
+                    <div class="plan-feature">Basic maintenance support</div>
+                    <div class="plan-feature">Easy return pickup</div>
+                    <div class="plan-feature">Affordable pricing</div>
+                    <button class="plan-cta light" onclick="openModal('signup')">Get Started</button>
+                </div>
+                <div class="plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-sub">Ideal for working professionals</div>
+                    <div class="plan-price">₹1,799</div>
+                    <div class="plan-period">per month · 6-month plan</div>
+                    <hr class="plan-divider">
+                    <div class="plan-feature">Free delivery &amp; setup</div>
+                    <div class="plan-feature">Up to 3 items</div>
+                    <div class="plan-feature">Priority maintenance</div>
+                    <div class="plan-feature">Free item swap once</div>
+                    <div class="plan-feature">10% renewal discount</div>
+                    <button class="plan-cta white" onclick="openModal('signup')">Get Started</button>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-sub">Best for long-term renters</div>
+                    <div class="plan-price">₹2,499</div>
+                    <div class="plan-period">per month · 12-month plan</div>
+                    <hr class="plan-divider">
+                    <div class="plan-feature">Free delivery &amp; setup</div>
+                    <div class="plan-feature">Unlimited items</div>
+                    <div class="plan-feature">24/7 maintenance support</div>
+                    <div class="plan-feature">Free swaps anytime</div>
+                    <div class="plan-feature">20% renewal discount</div>
+                    <button class="plan-cta light" onclick="openModal('signup')">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES / WHY US -->
+        <section id="features">
+            <div class="section-header center">
+                <span class="section-label">Why RentEase</span>
+                <h2 class="section-title">We make renting effortless</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feat-card">
+                    <div class="feat-icon">🚚</div>
+                    <h3>Free Delivery & Setup</h3>
+                    <p>We deliver, assemble, and set up everything at your home — completely free of charge.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">🔧</div>
+                    <h3>Maintenance Support</h3>
+                    <p>Raise a maintenance request anytime. Our team resolves issues within 48 hours.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">🔄</div>
+                    <h3>Hassle-Free Returns</h3>
+                    <p>Moving out? Schedule a free pickup in just a few clicks. No stress, no penalties.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">💸</div>
+                    <h3>Zero Ownership Cost</h3>
+                    <p>No buying, no depreciation, no resale worries. Pay only for what you use.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">📦</div>
+                    <h3>Wide Product Range</h3>
+                    <p>From beds and sofas to refrigerators and washing machines — everything in one place.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon">🌱</div>
+                    <h3>Sustainable Living</h3>
+                    <p>Reduce wasteful purchases. Renting means fewer products manufactured and discarded.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials-bg" id="testimonials">
+            <div class="section-header center">
+            <span class="section-label">Testimonials</span>
+            <h2 class="section-title">Loved by renters across India</h2>
+            </div>
+            <div class="testi-grid">
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"Moved to Bangalore for work and had my apartment furnished within 2 days. The setup team was incredibly professional. Best decision ever!"</p>
+                <div class="testi-author">
+                <div class="testi-avatar" style="background:#1D6B4F;">AR</div>
+                <div>
+                    <div class="testi-name">Arjun Rao</div>
+                    <div class="testi-role">Software Engineer, Bangalore</div>
+                </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"As a student, buying furniture was out of the question. RentEase gave me a fully furnished room at a fraction of the cost. Highly recommended."</p>
+                <div class="testi-author">
+                <div class="testi-avatar" style="background:#D85A30;">PS</div>
+                <div>
+                    <div class="testi-name">Priya Sharma</div>
+                    <div class="testi-role">MBA Student, Mumbai</div>
+                </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★☆</div>
+                <p class="testi-text">"The washing machine broke down and they replaced it within 24 hours. That level of service is rare. I've renewed my plan twice now."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:#533AB7;">NK</div>
+                        <div>
+                            <div class="testi-name">Neha Kumar</div>
+                            <div class="testi-role">Marketing Manager, Hyderabad</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <section class="cta-section" id="contact">
+            <h2>Ready to <em>furnish</em> your space?</h2>
+            <p>Join thousands of renters across India. Set up your home in days, not months.</p>
+            <div class="cta-btns">
+            <a href="#" class="cta-btn-white" onclick="openModal('signup')">Start Renting Today</a>
+            <a href="#products" class="cta-btn-ghost">Browse Catalog</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-top">
+            <div>
+                <div class="footer-brand">
+                    <img src="Images/logo.png" alt="LOGO">
+                    Rent <span>Ease</span>
+                </div>
+                <p class="footer-desc">Affordable furniture and appliance rentals for students and working professionals across India.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#">Furniture</a>
+                <a href="#">Appliances</a>
+                <a href="#">Bedroom</a>
+                <a href="#">Living Room</a>
+                <a href="#">Kitchen</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Maintenance</a>
+                <a href="#">Return Policy</a>
+                <a href="#">Track Order</a>
+                <a href="#">FAQs</a>
+            </div>
+            </div>
+            <div class="footer-bottom">
+            <span>© 2025 RentEase. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            </div>
+        </footer>
+
+        <!-- MODAL -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-box">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <h2 id="modalTitle">Create Account</h2>
+                <p id="modalSubtitle">Start renting furniture and appliances today.</p>
+                <div id="modalForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Kamalesh Jonnadula">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="kamalesh@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label>Create Password</label>
+                        <input type="password" placeholder="Kamalesh@123">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <select>
+                            <option>Select your city</option>
+                            <option>Bangalore</option>
+                            <option>Mumbai</option>
+                            <option>Hyderabad</option>
+                            <option>Delhi</option>
+                            <option>Chennai</option>
+                            <option>Pune</option>
+                        </select>
+                    </div>
+                    <button class="form-submit" id="formSubmit" onclick="closeModal()">Create My Account →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOAST -->
+        <div class="toast" id="toast">
+            <span class="toast-icon">🛒</span>
+            <span id="toastMsg">Item added to cart!</span>
+        </div>
+        <script type="module" src="scripts/firebase.js"></script>
+        <script src = "scripts/script.js"></script>
+    </body>
+</html>
